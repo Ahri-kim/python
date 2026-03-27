@@ -66,7 +66,7 @@ print(my_set)
 #print(my_set[1])
 #my_set[1]='빅파이'
 
-#딕셔너리
+#딕셔너리 p.
 person={'이름':'나귀욤','나이':'7세', '키':120,'몸무게':23}
 print(person['이름'])
 print(person['나이'])
