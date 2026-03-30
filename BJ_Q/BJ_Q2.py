@@ -29,32 +29,23 @@ for a in sums:
 
 #BJ8393
 n=int(input())
-print(((n+1)*n)//2)'''
+print(((n+1)*n)//2)
 
 #BJ25304
 X=int(input())
-A=[]
-B=[]
+N=int(input())
 total = 0
-for _ in range(int(input())):
-    a, b = input().split()
-    A.append(a)
-    B.append(b)
+for _ in range(N):
+    a, b = map(int,input().split())
+    total += a*b
 
-str(A)
-str(B)
-
-for t in range(len(A)):
-    total += sum(int(A[t]) * int(B[t]))
-
-print(total)
-
-if X==sum():
-    print('yes')
+if X == total:
+    print('Yes')
 else:
-    print('no')
+    print('No')
 
 #for _ in range(int(input())):
 #s1, s2 = {map(int,input().split())for _ in range(int(input()))} #a,b for N
 #for x,y in zip(s1, s2):
 # sum((x*y for x, y in zip(s1,s2)))
+'''
