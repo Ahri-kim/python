@@ -84,5 +84,54 @@ while True:
         A.append(a+b)
 for i in A:
     print(i)
+
+#10807
+N = int(input())
+M =list(map(int,input().split()))
+V = int(input())
+print(M.count(V))
+
+#10818
+N = int(input())
+M = list(map(int,input().split()))
+M.sort()
+print(M[0], M[-1])
+
+#2562
+M = []
+for i in range(9):
+    M.append(int(input()))
+print(max(M))
+print(M.index(max(M)) + 1)
+
+#10810
+N, M = map(int,input().split())
+A = [0]*N
+for t in range(M):
+    i, j, k = map(int,input().split())
+    for o in range(i,j+1):
+        A[o-1] = k
+print(*A)
+
+#3040
+import random
+M = []
+for t in range(9):
+    M.append(int(input()))
+R = random.sample(M, 7) 
+
+while sum(R) != 100:
+    R = random.sample(M, 7)
+    if sum(R)==100 :
+        for T in R:
+            print(T)
 '''
-#10951
+'''
+#10813
+N, M = int(input())
+A = []
+for i in range(N):
+    A.append(i)
+for t in range(M):
+    i, j = 
+'''

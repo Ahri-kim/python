@@ -100,7 +100,7 @@ p1 = P(a, b)
 p2 = P(a1, b1)
 print(p1.status())
 print(p2.status())
-'''
+
 #9697
 a1, a2, a3 = input().split()
 b1, b2, b3 = input().split()
@@ -112,11 +112,31 @@ class B:
         self.h = h
     def bs(self):
         print(f'name:{self.name}, AVG:{self.avg}, AB:{self.ab}, H:{self.h}')
+        
 h1 = int(a3)/int(a2)
 h2 = int(b3)/int(b2)
-round(h1,3)
-round(h2,3)
-p1 = B(a1, h1, a2, a3)
-p2 = B(b1, h2, b2, b3)
-print(p1.bs())
-print(p2.bs())
+p1 = B(a1, f'{h1:.3f}', a2, a3)
+p2 = B(b1, f'{h2:.3f}', b2, b3)
+p1.bs()
+p2.bs()
+
+#9176
+A = input()
+a = input()
+print(f'Capital of {A} is {a}')
+
+#9177
+a = input()
+b = input()
+c = input()
+print(a,'and',a)
+print(b,'or',c)
+
+#9178
+n1 = input()
+n2 = input()
+n3 = input()
+n4 = input()
+print(n3,'vs',n4)
+print(n1,'vs',n2)
+'''
