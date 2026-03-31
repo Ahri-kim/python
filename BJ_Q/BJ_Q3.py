@@ -126,12 +126,13 @@ while sum(R) != 100:
         for T in R:
             print(T)
 '''
-'''
 #10813
-N, M = int(input())
+N, M = map(int,input().split())
 A = []
 for i in range(N):
-    A.append(i)
+    A.append(i+1)
 for t in range(M):
-    i, j = 
-'''
+    i, j = map(int,input().split())
+    A[i] = j
+    A[j] = i
+print(*A)
