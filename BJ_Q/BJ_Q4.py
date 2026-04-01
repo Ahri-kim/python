@@ -68,7 +68,7 @@ for a in w:
     for i in range(len(d)):
         for j in range(len(d[i])):
             if d[i][j] == a:
-                b = [i]
+                b = i
                 c = b + 2
                 A.append(c)
                 found = True
