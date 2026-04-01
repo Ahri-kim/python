@@ -125,7 +125,7 @@ while sum(R) != 100:
     if sum(R)==100 :
         for T in R:
             print(T)
-'''
+
 #10813
 N, M = map(int,input().split())
 A = []
@@ -136,3 +136,37 @@ for t in range(M):
     A[i] = j
     A[j] = i
 print(*A)
+
+#10809
+A = list('abcdefghijklmnopqrstuvwxyz')
+S = input()
+for _ in A:
+    print(S.find(_), end = ' ')
+
+#3052
+S = set(int(input()) for _ in range(10))
+for i in S.copy():
+    S.remove(i)
+    S.add(i%42)
+print(len(S))
+
+#11720
+N = int(input())
+for _ in range(1):
+    print(sum(map(int,input())))
+
+#9086
+T = int(input())
+a = [input() for i in range(T)]
+for i in a:
+    print(i[0], i[-1], sep = '')
+
+#5597
+S = set(int(input()) for _ in range(28))
+A = set(range(1, 31))
+T = A - S 
+T = sorted(T)
+for _ in T:
+    print(_)
+
+'''

@@ -17,7 +17,7 @@ for t in I1:
 #9699
 N, M = map(int,input().split())
 L = []
-class XX:
+class Xx:
     def __init__(self, n, s):
         self.n = n
         self.s = s
@@ -26,7 +26,7 @@ class XX:
 for i in range(N):
     n, s =input().split()
     if int(s) >= M:
-        L.append(XX(n, s))
+        L.append(Xx(n, s))
     else:
         continue
 for t in L[::-1]:
@@ -43,5 +43,11 @@ m = []
 for i in range(30):
     m.append(int(input()))
 print(*m)
+
+#9228
+N = int(input())
+if N >= 60:
+    print('PASS')
+else:
+    print('FAIL')
 '''
-#9700
