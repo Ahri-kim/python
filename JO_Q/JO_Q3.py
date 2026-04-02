@@ -50,4 +50,9 @@ if N >= 60:
     print('PASS')
 else:
     print('FAIL')
+
+#9385
+N, A = input().split()
+n, a = input().split()
+print(f"{N}'s age - {n}'s age =", int(A)-int(a))
 '''
