@@ -55,4 +55,17 @@ else:
 N, A = input().split()
 n, a = input().split()
 print(f"{N}'s age - {n}'s age =", int(A)-int(a))
+
+#9229
+A = int(input())
+if A >=13:
+    print("Middle School")
+else:
+    print("Elementary School")
+
+#9352
+L =[]
+for i in range(50):
+    L.append(int(input()))
+print(*L[::-1])
 '''

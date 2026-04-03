@@ -137,7 +137,7 @@ for _ in range(M):
     p = p[::-1]
     L[i-1:j] = p
 print(*L)
-'''
+
 #1149
 import sys 
 N = int(sys.stdin.readline().strip()) 
@@ -162,3 +162,4 @@ for t in range(N):
             m += min(L[:1]) 
             F = L.index(min(L[:1]))
 print(m)
+'''
