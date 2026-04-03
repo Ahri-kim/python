@@ -26,5 +26,5 @@ for cro in A:
     if cro in W:
         count = W.count(cro)
         s += count
-        W = W.replace(cro, '')
-print(s + len(W))
+        W = W.replace(cro, '0')
+print(len(W) - s)
