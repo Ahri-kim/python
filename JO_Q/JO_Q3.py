@@ -68,4 +68,14 @@ L =[]
 for i in range(50):
     L.append(int(input()))
 print(*L[::-1])
+
+#9290
+N = int(input())
+for i in range(N):
+    print('Python',i)
+
+#9294
+N = int(input())
+for i in range(1,N+1,1):
+    print(i, end =' ')
 '''
