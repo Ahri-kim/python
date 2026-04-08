@@ -79,3 +79,10 @@ N = int(input())
 for i in range(1,N+1,1):
     print(i, end =' ')
 '''
+#9382
+A = "apple orange banana"
+B = "   Hello world!   "
+A = "banana orange apple"
+print(A)
+print(B)
+print(B.strip())
