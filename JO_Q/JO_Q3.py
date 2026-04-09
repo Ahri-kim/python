@@ -78,7 +78,7 @@ for i in range(N):
 N = int(input())
 for i in range(1,N+1,1):
     print(i, end =' ')
-'''
+
 #9382
 A = "apple orange banana"
 B = "   Hello world!   "
@@ -86,3 +86,63 @@ A = "banana orange apple"
 print(A)
 print(B)
 print(B.strip())
+
+#9353
+A = ['a','b','c','d','e']
+print(A)
+print(*A[::-1])
+
+#9458
+N = int(input())
+def f():
+    if N>0:
+        print('positive')
+    elif N == 0:
+        print('zero')
+    else:
+        print('negative')
+f()
+
+#9459
+G, A = input().split()
+if G =='m' or G == 'M':
+    if int(A) >=20:
+        print('MAN')
+    else:
+        print('BOY')
+else:
+    if int(A) >= 20:
+        print('WOMAN')
+    else:
+        print('GIRL')
+def f():
+    a=a
+
+#9460
+a, b = map(int,input().split())
+def f():
+    a ==A
+    b ==B
+print(f"함수 내부: a = {b}, b = {a}")
+print(f"함수 외부: a = {a}, b = {b}")
+print(f"함수 내부: a = {b}, b = {a}")
+print(f"함수 외부: a = {b}, b = {a}")
+
+#9461
+n, m = 0, 0
+def f():
+    global n, m
+    n, m = map(int,input().split())
+
+    if n > m:
+        print(n//2, m*2)
+    else:
+        print(n*2, m//2)
+f()
+'''
+#9462
+N = int(input())
+M = []
+M.append(map(int,input().split()))
+for i in range(4):
+    print(random.(M))
