@@ -1,15 +1,12 @@
 import oracledb
 from person import Person
 
-# 데이터베이스 접속 정보 설정
 dsn = oracledb.makedsn("localhost", 1521, service_name="XE")
 conn = oracledb.connect(user="c##mbc", password="qwer1234", dsn=dsn)
 
-# 쿼리 실행을 위한 커서 생성
 cursor = conn.cursor()
+dirty = True
 P = []
-i = 0
-d = 0
 
 def show_menu():
     print("--임직원 관리 시스템--")
@@ -22,59 +19,54 @@ def show_menu():
     return menu_num
 
 def insert_emp():
+    global dirty
     print("새로운 직원의 사번, 이름을 입력하세요....")
     empno, ename = input().split()
     print(empno, ename)
 
     if empno.isdigit():
-    #INSERT 예제
         try:
-
             cursor.execute("INSERT INTO EMP (EMPNO, ENAME) VALUES (:1, :2)", [empno, ename.upper()])
             conn.commit()
             print("Data inserted successfully")
-            global i
-            i += 1
+            dirty = True 
+
         except oracledb.DatabaseError as e:
             print(f"Error inserting data: {e}")
     else:
         print("AHRI-0001 : 사번 입력 오류 입니다. 숫자만 입력 가능합니다.")
 
 
-
 def search_emp():
-    if i != 0 or d != 0 or len(P) == 0 :
+    global P, dirty
+    if dirty or len(P) == 0:
         try:
             P.clear()
-            cursor.execute(''' 
-                SELECT EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO   
+            cursor.execute('''SELECT EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO   
                 FROM emp 
                 ORDER BY EMPNO''')
-
             for row in cursor:
                 p = Person(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7])
                 P.append(p)
-            for p in P:
-                p.print_person()
-            
+            dirty = False
+
         except oracledb.DatabaseError as e:
             print(f"Error fetching data: {e}")
-    else:
-        print(*P)
-
+    for p in P:
+        p.print_person()
 
 def delete_emp():
+    global dirty
     print("삭제하려는 직원의 사번, 이름을 입력하세요.")
     empno, ename = input().split()
     try:
         cursor.execute("DELETE FROM emp WHERE empno = :empno and ename = :ename", [empno, ename.upper()])
         conn.commit()
         print("Data deleted successfully")
-        global d
-        d += 1
+        dirty = True 
+
     except oracledb.DatabaseError as e:
         print(f"Error deleting data: {e}")
-
 
 loop = True
 while loop:
@@ -88,8 +80,6 @@ while loop:
     elif select == 3:
         print("3. 직원 조회 메뉴")
         search_emp()
-        i = 0
-        d = 0
     else:
         print("프로그램 종료***")
         loop = False

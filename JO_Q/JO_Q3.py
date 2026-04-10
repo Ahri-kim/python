@@ -139,10 +139,110 @@ def f():
     else:
         print(n*2, m//2)
 f()
-'''
+
 #9462
 N = int(input())
 M = []
 M.append(map(int,input().split()))
 for i in range(4):
     print(random.(M))
+    
+#9179
+N = int(input())
+print(f"입력받은 정수:",N)
+
+#9180
+N = int(input())
+print(f"I am {N} years old")
+
+#9181
+O = int(input())
+Y = int(input())
+print(O - Y)
+
+#9182
+f = int(input())
+s = int(input())
+t = int(input())
+print(f+s+t)
+
+#9183
+n = float(input())
+print(f"입력받은 실수: {n}")
+
+#9184
+n = float(input())
+m = float(input())
+print(f"좌표 = ( {n} , {m} )")
+
+#9185
+n = int(input())
+m = float(input())
+print(n,'+',m,'=',n + m)
+
+#9186
+n = float(input())
+m = float(input())
+print(n+5)
+print(m-5)
+
+#9187
+n, m =map(int,input().split())
+print(n, '*', m, '=', n*m)
+'''
+#9188
+x, y = map(int,input().split())
+print(y)
+print(x)
+
+#9189
+n, m, x, y = map(int,input().split())
+print("total sum =",n+m+x+y)
+
+#9190
+n, m = map(int,input().split())
+print(n, "**",m,"=",n**m)
+
+#9191
+a, c = map(int,input().split())
+b, d = map(int,input().split())
+print(a*b+c*d)
+
+#9192
+n, h, w = input().split()
+print("name:",n)
+print("height:",h)
+print("weight:",w)
+
+#9193
+N, B = input().split()
+n, b = input().split()
+print(N,"was born in",B)
+print(n,"was born in",b)
+print(N,"is",int(b)-int(B),"years older than",n)
+
+#9194
+l = input()
+t, d = input().split()
+print('Location:',l)
+print('Time:',t,'hours')
+print('Distance:',d,'km')
+
+#9354
+a = []
+for i in range(5):
+    A = input()
+    a.append(A)
+print(a)
+
+#9209
+a, b =map(int,input().split())
+if a == b:
+    print("True")
+else:
+    print("False")
+if a != b:
+    print("True")
+else:
+    print("False")
+    
