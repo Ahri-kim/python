@@ -91,10 +91,9 @@ for j in range(1, len(s)):
     if s[j]< N <= s[j+1]:
         print(j+2)
 ---------------------------------------------------------------------        
-'''
 
 #2745
-A = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','D','F','G','H','I','J','K','L','M','N',
+A = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N',
 'O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
 N , B = input().split()
@@ -106,3 +105,63 @@ for i in N:
     s += I*(b**(n-1))
     n -= 1
 print(s)
+
+#2869
+a, b, v = map(int,input().split())
+d = a-b
+w = v - a
+
+if a==v:
+    print(1)
+elif d != 1:
+    if w%d==0:
+        print((w//d)+1)
+    else:
+        print((w//d)+2)
+else:
+    print(w +1)
+
+#25206
+grade = {
+"A+":4.5, "A0":4.0,
+"B+":3.5, "B0":3.0,
+"C+":2.5, "C0":2.0,
+"D+":1.5, "D0":1.0,
+"F":0.0
+}
+T = 0
+A = 0
+for _ in range(20):
+    s, h, g = input().split()
+    h = float(h)
+    if g == "P":
+        continue
+    T += h
+    A += h * grade[g]
+print(A / T)
+
+#3046
+r1, s = map(int,input().split())
+print((s*2)-r1)
+'''
+#2638
+n, m = map(int,input().split())
+L =[]
+l = []
+T = 0
+for i in range(n):
+    L.append(input().split())
+for i in range(len(L)):
+    for j in range(len(L[0])):
+        if L[i][j] == '1':
+            l.append((i,j))
+
+if L[i-1][j] == '0' or L[i+1][j] == '0':
+    if L[i][j-1] == '0' or L[i][j+1] == '0':
+        T += 1
+
+
+
+
+
+for k in range(len(l)):
