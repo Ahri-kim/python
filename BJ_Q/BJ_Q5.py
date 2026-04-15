@@ -143,7 +143,7 @@ print(A / T)
 #3046
 r1, s = map(int,input().split())
 print((s*2)-r1)
-'''
+
 #2638
 n, m = map(int,input().split())
 L =[]
@@ -161,7 +161,5 @@ if L[i-1][j] == '0' or L[i+1][j] == '0':
         T += 1
 
 
-
-
-
 for k in range(len(l)):
+'''
