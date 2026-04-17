@@ -31,7 +31,7 @@ for i in range(t):
         print(f"#{i+1} {a} 는 소문자 입니다.")
     else:
         print(f"#{i+1} {a} 는 대문자 입니다.")
-'''
+
 #1244
 T = int(input())
 L = []
@@ -49,4 +49,15 @@ for i in range(T):
                 N[max(N)], N[0] = N[0], N[max(N)]
                 L.append(N)
         else:
-            
+'''
+#6221
+L = ['가위','바위','보']
+f = L.index(input())
+s = L.index(input())
+L[0] < L[1] and L[1] < L[2] and L[2] < L[0]
+if f == s:
+    print('Result : Draw')
+elif f > s:
+    print('Result : Man1 Win!')
+else:
+    print('Resilt : Man2 Win!')
