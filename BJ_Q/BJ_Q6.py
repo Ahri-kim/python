@@ -96,7 +96,3 @@ if n != '0':
     print(s)
 else:
     pass
-
-
-
-
