@@ -53,47 +53,49 @@ for i in range(t):
     S = 0
 for x in L:
     print(x)
-'''
+
 #1193
-N = int(input())
-s = 1
-a = 2
-i=0
-if N > 2:
-    while N <= s :
-        s += a
-        a += 1
-    if (a-1)%2 ==0:
-        i = (a -1) - (s-N)
-    else:
-        i = N-s-1
-    print( i,'/', a-1)
-elif N == 1:
-    print(1,'/',1)
+n = int(input())
+f = 1  # 층수
+m = 0  # 대빵
+while m+f < n:
+    m += f
+    f += 1
+l = n-m
+if f % 2 == 0: #짝수 층(왼-오)
+    x = l
+    y = f-l+1
+else:         #홀수 층(오-왼)
+    x = f-l+1
+    y = l
+print(f"{x}/{y}")
+'''
+#1110
+n = input()
+if n != '0' and len(n) == 1:
+    n = list(n)
+    n.insert(0, '0')
+elif n == '0':
+    print(1)
 else:
-    print(1,'/',2)
+    pass
 
-
-
-
-
-
-
-
-#N = int(input())
-#s = 1
-#a = 1 
-#while N > a:
-#    a += 6 * s
-#    s += 1
-#print(s)
-
-
-
-
-
-
-
+if n != '0':
+    n = list(n)
+    N = int(n[0]) * 10 + int(n[1])
+    t = 0
+    s = 0
+    l = []
+    while t != N:
+        t = int(n[0]) + int(n[1])
+        s += 1
+        l.append(str(t)[-1])
+        n[0], n[1] = n[1], l[0]
+        l = []
+        t = int(n[0]) * 10 + int(n[1])
+    print(s)
+else:
+    pass
 
 
 

@@ -48,6 +48,32 @@ while t != 0:
 L.sort()
 for i in L:
     print(f"{i}: {C[i]}")
-'''
+
 #9407
 L = list(map(int,input().split()))
+
+#9369
+l = []
+t = 0
+while t != -1:
+    t = int(input())
+    l.append(t)
+    if t != -1:
+        if len(l) > 3:
+            l.pop(0)
+    else:
+        l.pop()
+print(*l)
+'''
+#9390
+h = int(input())
+m = int(input())
+if h < 10:
+    if m < 10:
+        print(f"0{h}:0{m}")
+    else:
+        print(f"0{h}:{m}")
+elif h>10 and m < 10:
+    print(f"{h}:0{m}")
+else:
+    print(f"{h}:{m}")
