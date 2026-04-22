@@ -69,7 +69,7 @@ else:         #홀수 층(오-왼)
     x = f-l+1
     y = l
 print(f"{x}/{y}")
-'''
+
 #1110
 n = input()
 if n != '0' and len(n) == 1:
@@ -96,3 +96,18 @@ if n != '0':
     print(s)
 else:
     pass
+
+#2440
+n = int(input())
+for i in range(n,0,-1):
+    print('*'*i)
+
+#2441
+n = int(input())
+for i in range(n,0,-1):
+    print(f"{'*'*i:>{n}}")
+'''
+#2739
+n = int(input())
+for i in range(1,10,1):
+    print(f"{n} * {i} = {n*i}")

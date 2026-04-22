@@ -145,8 +145,72 @@ for i in range(1,n+1,1):
         for j in range((i-1)*m+1,i*m+1,1):
             print(j,end=' ')
         print()
-'''
+
+#9702
+class P:
+    def __init__(self, Name, Age):
+        self.Name = Name
+        self.Age = Age
+l=[]
+n = int(input())
+for i in range(n):
+    Name, Age = input().split()
+    l.append(P(Name, Age))
+L = sorted(l, key=lambda x: x.Age, reverse=True)
+for p in L:
+    print(f"Name:{p.Name}, Age:{p.Age}")
+
 #1856
+n, m = map(int,input().split())
+for i in range(1, n+1,1):
+    if i==1:
+        for t in range(i,m+1,1):
+            print(t,end=' ')
+        print()
+    elif i%2!=0:
+        for j in range(((i-1)*m)+1,(i*m)+1,1):
+            print(j,end=' ')
+        print()
+    else:
+        for k in range(i*m,(i-1)*m,-1):
+            print(k,end=' ')
+        print()
 
+#1304
+n = int(input())
+for j in range(n):
+    for i in range(j+1, n*n+1, n):
+        print(i, end = ' ')
+    print()
 
+#5931
+n = int(input())
+for i in range(1,n+1,1):
+    for t in range(n):
+        print(i,end=' ')
+    print()
+
+#5932
+n = int(input())
+l = list(range(1, n+1))
+
+for i in range(n):
+    print(*l if i % 2 == 0 else l[::-1])
+
+#5933
+n = int(input())
+for i in range(1,n+1):
+    for j in range(i,(i*n)+1,i):
+        print(j,end=' ')
+    print()
+'''
+#1307
+L=['A', 'B', 'C', 'D','E','F','G','H','I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q','R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y','Z']
+n = int(input())
+for i in range(1,n+1):
+    for j in range((n*n)-i, -1, -n):          #n=4/ 15,0,-4 / 14,0,-4
+        if j > len(L):
+            j = j-len(L)
+        print(L[j],end=' ')                  #15,11,7,3,/14,10,6,2
+    print()
 
