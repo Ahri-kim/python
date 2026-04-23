@@ -203,14 +203,23 @@ for i in range(1,n+1):
     for j in range(i,(i*n)+1,i):
         print(j,end=' ')
     print()
-'''
+
 #1307
 L=['A', 'B', 'C', 'D','E','F','G','H','I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q','R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y','Z']
 n = int(input())
 for i in range(1,n+1):
-    for j in range((n*n)-i, -1, -n):          #n=4/ 15,0,-4 / 14,0,-4
-        if j > len(L):
-            j = j-len(L)
-        print(L[j],end=' ')                  #15,11,7,3,/14,10,6,2
+    for j in range((n*n)-i, -1, -n):
+        j = j%26            
+        print(L[j],end=' ')
     print()
 
+#9391
+h ,m = map(int,input().split())
+if h>=12:
+    if h !=12:
+        print(f"{h-12:02} : {m} PM")
+    else:
+        print(f"{h} : {m} PM")
+else:
+    print(f"{h:02} : {m} AM")
+'''

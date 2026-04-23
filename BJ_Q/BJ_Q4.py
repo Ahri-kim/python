@@ -137,29 +137,19 @@ for _ in range(M):
     p = p[::-1]
     L[i-1:j] = p
 print(*L)
-
-#1149
-import sys 
-N = int(sys.stdin.readline().strip()) 
-L = [0, 0, 0] 
-m = 0 
-F = 0 
-for t in range(N): 
-    r, g, b = map(int,sys.stdin.readline().split()) 
-    L[0], L[1], L[2] = r, g, b 
-    if t == 0: 
-        F += L.index(min(L)) 
-        m += min(L) 
-    else:
-        if F == 0: 
-            m += min(L[1:3])
-            F = L.index(min(L[1:3]))
-        elif F == 1: 
-            s = min(L[0], L[2]) 
-            m += s 
-            F = L.index(min(L[0], L[2]))
-        else:
-            m += min(L[:1]) 
-            F = L.index(min(L[:1]))
-print(m)
 '''
+#1149
+import sys
+N = int(sys.stdin.readline().strip())
+R = G = B = 0
+
+for t in range(N):
+    r, g, b = map(int, sys.stdin.readline().split())
+    if t == 0:
+        R, G, B = r, g, b
+    else:
+        n_R = r + min(G, B)
+        n_G = g + min(R, B)
+        n_B = b + min(R, G)
+        R, G, B = n_R, n_G, n_B
+print(min(R, G, B))
