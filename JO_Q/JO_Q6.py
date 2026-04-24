@@ -135,7 +135,6 @@ else:
 
 #1303
 n, m = map(int,input().split())
-a = n*m
 for i in range(1,n+1,1):
     if i == 1:
         for k in range(1,m+1,1):

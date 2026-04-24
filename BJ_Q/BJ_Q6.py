@@ -106,8 +106,23 @@ for i in range(n,0,-1):
 n = int(input())
 for i in range(n,0,-1):
     print(f"{'*'*i:>{n}}")
-'''
+
 #2739
 n = int(input())
 for i in range(1,10,1):
     print(f"{n} * {i} = {n*i}")
+
+
+#9012
+n = int(input())
+for i in range(n):
+    S = input()
+    for j in range(len(S)):
+        S = S.replace("()","",1)
+        if S =='':
+            break
+    if S =='':
+        print('YES')
+    else:
+        print('NO')    
+'''
