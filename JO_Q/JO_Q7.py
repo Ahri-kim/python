@@ -108,7 +108,7 @@ for i in l:
             u+=i
 print(s)
 print(u)
-'''
+
 #1733
 n = []
 for i in range(19):
@@ -116,32 +116,26 @@ for i in range(19):
 s=[]
 J=[]
 K=[]
-T=0
-while T==0:
+Z=0
+while Z==0:
     for j in range(19):
-        for k in range(19):
-            if n[j][k] !=0:
-                for x in range(1,6):
-                    if j+x <= 18 and k+x <= 18:
-                        if n[j][k+x] == n[j][k] or n[j+x][k] == n[j][k] or n[j+x][k+x] == n[j][k]:
-                            s.append(n[j][k])
-                            J.append(j)
-                            K.append(k)
-                        else:
-                            break
-                if 0<=len(s)<=4:
-                    s=[]
-                    J=[]
-                    K=[]
-                else:
-                    T=1
-        if j ==18 and len(s)==0:
-            s.append(0)
-
+        if sum(n[j]) != 0:
+            for k in range(19):
+                if n[j][k] !=0:                        
+                    T = n[j][k]
+                    if any([n[j][k:k+5] == [T]*5,
+                        all(n[j+t][k] == T for t in range(5)),
+                        all(n[j+t][k+t] == T for t in range(5))]):
+                        s.append(n[j][k])
+                        J.append(j)
+                        K.append(k)
+                        Z=1
+                    
+            if j ==18 and len(s)==0:
+                Z=1
 print(s)
-print(J)
-print(K)
-'''
+print(J[0]+1,K[0]+1)
+
 if s[0] != 0:
     print(s[0])
     print(J[0], K[0])
@@ -150,8 +144,28 @@ else:
 '''
 
 
-
-
-
-
 #    n[j][k+1]==n[j][k] or n[j+1][k+1]==n[j][k] or n[j+1][k]==n[j][k]
+
+n = [list(map(int, input().split())) for _ in range(19)]
+for j in range(19):
+    for k in range(19):
+        if n[j][k] != 0:
+            T = n[j][k]
+            if k+4 < 19 and n[j][k:k+5] == [T]*5:
+                print(T)
+                print(j+1, k+1)
+                exit()
+            if j+4 < 19 and all(n[j+t][k] == T for t in range(5)):
+                print(T)
+                print(j+1, k+1)
+                exit()
+            if j+4 < 19 and k+4 < 19 and all(n[j+t][k+t] == T for t in range(5)):
+                print(T)
+                print(j+1, k+1)
+                exit()
+            if j+4 < 19 and k >= 4 and all(n[j+t][k-t] == T for t in range(5)):
+                print(T)
+                print(j+5, k-3)
+                exit()
+
+print(0)
