@@ -25,5 +25,74 @@ while C != 0:
         T += 1
         c = C    
 print(T)
-'''
+
 #--------------------------------------------------------------------------------
+
+#9324
+i=1
+while i<=3:
+    print('*'*i)
+    i+=1
+
+for i in range(1,4,1):
+    print('*'*i)
+
+#9325
+t=1
+n=int(input())
+while t<=n:
+    print('*'*t)
+    t+=1
+
+n=int(input())
+for t in range(1,n+1):
+    print('*'*t)
+
+#9327
+for i in range(3,1,-1):
+    print('*'*i)
+for i in range(1,4,1):
+    print('*'*i)
+
+#9328
+n=int(input())
+t=1
+while t<=n:
+    print('*'*t)
+    t+=1
+while t!=1:
+    t-=1
+    print('*'*t)
+
+#9326
+n=int(input())
+for i in range(n,0,-1):
+    print('* '*i)
+
+#9329
+for i in range(1,4,1):
+    print(f"{'*'*i:>3}")
+
+#9330
+n=int(input())
+for i in range(n,0,-1):
+    print(f"{'*'*i:>{n}}")
+
+#9331
+for i in range(1,6,2):
+    print(f"{'*'*i:^5}")
+
+#1304
+n = int(input())
+for j in range(n):
+    for i in range(j+1, n*n+1, n):
+        print(i, end = ' ')
+    print()
+'''
+#1146
+n=int(input())
+l=list(map(int,input().split()))
+for i in range(len(l)-1):
+    m=l[i:].index(min(l[i:]))+i
+    l[m],l[i] = l[i],l[m]
+    print(*l)

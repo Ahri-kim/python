@@ -182,6 +182,16 @@ for j in range(n):
         print(i, end = ' ')
     print()
 
+n = int(input())
+for j in range(n):
+    print(*range(j+1, n*n+1, n))
+
+n = int(input())
+l = list(range(1, n*n+1))
+for i in range(n):
+    print(*l[i::n])
+
+
 #5931
 n = int(input())
 for i in range(1,n+1,1):
