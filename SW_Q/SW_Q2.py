@@ -11,7 +11,7 @@ for i in range(t):
     l=list(map(int,input().split()))
     l.sort()
     print(f"#{i+1} {l[-1]-l[0]}")
-'''
+
 #4880
 T=int(input())
 R=2, S=1, P=3
@@ -35,3 +35,27 @@ for i in range(T):
 
             False
             break
+
+#4873
+T=int(input())
+for i in range(T):
+    s=list(input())
+    t=0
+    while t<len(s)-1:
+        if s[t] == s[t+1]:
+            del s[t:t+2]
+            if t>0:
+                t-=1
+        else:
+            t+=1
+    print(f"#{i+1} {len(s)}")
+'''
+#4864
+T=int(input())
+for i in range(T):
+    s1=input()
+    s2=input()
+    if s1 in s2:
+        print(f"#{i+1} 1")
+    else:
+        print(f"#{i+1} 0")

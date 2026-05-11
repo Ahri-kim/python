@@ -88,7 +88,7 @@ for j in range(n):
     for i in range(j+1, n*n+1, n):
         print(i, end = ' ')
     print()
-'''
+
 #1146
 n=int(input())
 l=list(map(int,input().split()))
@@ -96,3 +96,43 @@ for i in range(len(l)-1):
     m=l[i:].index(min(l[i:]))+i
     l[m],l[i] = l[i],l[m]
     print(*l)
+
+#9466
+n=int(input())
+def f():
+    for i in range(1,n*n+1,1):
+        if i%n!=0:
+            print(i,end=' ')
+        else:
+            print(i)
+            print()
+f()
+
+#2604
+n=list(input())
+s=0
+for i in range(len(n)-1):
+    if n[i] == n[i+1]:
+        s+=5
+    else:
+        s+=10
+print(s+10)
+
+#2857
+l = [list(input()) for _ in range(5)]
+m = len(max(l, key=len))
+for j in range(m):
+    for i in range(5):
+        if len(l[i]) > j:
+            print(l[i][j], end='')
+'''
+#2071
+n,m=map(int,input().split())
+l = [[1]*t for t in range(1,n+1)]
+print(l)
+#if m==1:
+#    for i in range(n):
+        
+#    print()
+#elif m==2:
+#else:
