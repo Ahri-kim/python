@@ -76,7 +76,7 @@ def solution(dots):
         if L.count(i) > 1:
             return 1
     return 0
-'''
+
 def solution(age):
     l = [chr(i) for i in range(ord('a'), ord('j') + 1)]
     age=str(age)
@@ -89,3 +89,57 @@ def solution(age):
     else:
         answer = l[int(age[0])]
     return answer
+
+def solution(letter):
+    morse = { 
+    '.-':'a','-...':'b','-.-.':'c','-..':'d','.':'e','..-.':'f',
+    '--.':'g','....':'h','..':'i','.---':'j','-.-':'k','.-..':'l',
+    '--':'m','-.':'n','---':'o','.--.':'p','--.-':'q','.-.':'r',
+    '...':'s','-':'t','..-':'u','...-':'v','.--':'w','-..-':'x',
+    '-.--':'y','--..':'z'
+}
+    return ''.join(morse[i] for i in letter.split())
+
+
+def solution(num_list):
+    answer = [0,0]
+    for i in num_list:
+        if i %2 == 0:
+            answer[0]+=1
+        else:
+            answer[1]+=1
+    return answer
+
+
+my_string="Bcad"
+
+def solution(my_string):
+    l = [chr(i) for i in range(ord('a'), ord('z') + 1)]
+    my_string=my_string.lower()
+    a=''
+    for i in l:
+        if i in my_string:
+            a+=i*my_string.count(i)
+    return a
+
+def solution(my_string):
+    return ''.join(sorted(my_string.lower()))
+
+num_list=[100, 95, 2, 4, 5, 6, 18, 33, 948]
+n=3
+
+def solution(num_list, n):
+    N=[]
+    for i in num_list:
+        if num_list[i]>=n:
+            m=num_list[i]%n-1
+            N[m].append(i)
+    answer = N
+    return answer
+'''
+
+l=[100, 95, 2, 4, 5, 6, 18, 33, 948]
+n=3
+def solution(num_list, n):
+    num_list = [num_list[i:i+n] for i in range(0, len(num_list), n)]
+    return num_list
