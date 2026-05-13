@@ -136,10 +136,34 @@ def solution(num_list, n):
             N[m].append(i)
     answer = N
     return answer
-'''
+
 
 l=[100, 95, 2, 4, 5, 6, 18, 33, 948]
 n=3
 def solution(num_list, n):
     num_list = [num_list[i:i+n] for i in range(0, len(num_list), n)]
     return num_list
+
+my_string="people"
+
+def solution(my_string):
+    for i in range(len(my_string)):
+        if my_string[i] in my_string[i+1:]:
+            my_string.replace(my_string[i],'')
+    answer = my_string
+    return answer
+
+def solution(my_string):
+    result = ""
+    for i in my_string:
+        if i not in result:
+            result += i
+    return result
+
+'''
+import math
+n=3628800
+t=1
+while n>=math.factorial(t):
+    t+=1
+print(t-1)
