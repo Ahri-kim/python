@@ -160,10 +160,10 @@ def solution(my_string):
             result += i
     return result
 
-'''
 import math
 n=3628800
 t=1
 while n>=math.factorial(t):
     t+=1
 print(t-1)
+'''
