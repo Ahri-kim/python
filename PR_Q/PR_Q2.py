@@ -33,3 +33,22 @@ def solution(myString):
     return sorted(myString.replace('x', ' ').split())
 
 '''
+def solution(money):
+    return money//5500 , money%5500
+
+def solution(price):
+    if price >= 500000: return int(price*0.8)
+    if price >= 300000: return int(price*0.9)
+    if price >= 100000: return int(price*0.95)
+    return price
+
+def solution(s):
+    s = sorted(s)
+    answer = ''
+    for i in s:
+        if s.count(i) == 1:
+            answer += i
+    return answer
+
+def solution(before, after):
+    return int(sorted(before) == sorted(after))
