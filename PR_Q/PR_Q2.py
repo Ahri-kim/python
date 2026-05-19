@@ -52,3 +52,26 @@ def solution(s):
 
 def solution(before, after):
     return int(sorted(before) == sorted(after))
+
+n=420
+def solution(n):
+    l=[]
+    i = 2
+    while i <= n:
+        if n % i == 0:
+            l.append(i)
+            n //= i
+        else:
+            i += 1
+    return sorted(set(l))
+    
+
+def solution(s):
+    s = s.split()
+    S = 0
+    for i in range(len(s)):
+        if s[i] != 'Z':
+            S += int(s[i])
+        else:
+            S -= int(s[i-1])
+    return S
