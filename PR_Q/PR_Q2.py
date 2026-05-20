@@ -75,3 +75,36 @@ def solution(s):
         else:
             S -= int(s[i-1])
     return S
+
+def solution(numbers):
+    return sum(numbers)/len(numbers)
+
+import math
+
+def solution(balls, share):
+    return math.factorial(balls) // (
+        math.factorial(share) * math.factorial(balls-share)
+    )
+
+keyinput=["left", "right", "up", "right", "right"]
+board=[11, 11]
+
+def solution(keyinput, board):
+    x, y = 0, 0
+    max_x = board[0] // 2
+    max_y = board[1] // 2
+    for key in keyinput:
+        if key == "up" and y < max_y:
+            y += 1
+        elif key == "down" and y > -max_y:
+            y -= 1
+        elif key == "left" and x > -max_x:
+            x -= 1
+        elif key == "right" and x < max_x:
+            x += 1
+    return [x, y]
+
+cipher="dfjardstddetckdaccccdegk"
+code=4
+def solution(cipher, code):
+    return cipher[code-1::code]
