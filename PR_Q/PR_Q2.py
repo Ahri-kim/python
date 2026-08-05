@@ -108,3 +108,14 @@ cipher="dfjardstddetckdaccccdegk"
 code=4
 def solution(cipher, code):
     return cipher[code-1::code]
+
+
+import math
+def solution(n):
+    return n // math.gcd(n, 6)
+
+def solution(my_string, n):
+    return ''.join(map(lambda x: x * n, my_string))
+
+def solution(array):
+    return max(enumerate(array), key=lambda x:x[1])[::-1]
