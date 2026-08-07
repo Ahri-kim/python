@@ -33,11 +33,11 @@ while True:
                     if 0 <= nx < n and 0 <= ny < m:
                         if L[nx][ny] == -1:
                             air += 1
-                if air >= 2:
+                if air:
                     melt.append((i,j))
     if not melt:
-        C = count
         break
+    C = count
     for x, y in melt:
         L[x][y] = 0
     T += 1
